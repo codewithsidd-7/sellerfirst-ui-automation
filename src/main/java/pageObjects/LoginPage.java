@@ -11,20 +11,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 
      WebDriver driver;
-    WebDriverWait wait;
-
-    //Constructor
-    public LoginPage(WebDriver driver){
-        this.driver=driver;
-        this.driver=driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 
-        PageFactory.initElements(driver,this);
-
+    //Constructor usigg BasePage
+    public LoginPage(WebDriver driver) {
+       super(driver);
     }
     //Locators
     @FindBy(css = "input[type=\"text\"]")
@@ -61,10 +55,7 @@ public class LoginPage {
 
 
     public void clickLogin (){
-
-        wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElement(By.cssSelector("span[class=\"mat-simple-snack-bar-content\"]"))));
         login_btn_loc.click();
-
     }
 
 }
