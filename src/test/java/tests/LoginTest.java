@@ -27,10 +27,7 @@ public class LoginTest {
         LoginPageLoc lpo = new LoginPageLoc(driver);
         lpo.setPhoneNumber("9425790844");
         lpo.clickSendOtp();
-        lpo.enterOtp1("1");
-        lpo.enterOtp2("0");
-        lpo.enterOtp3("0");
-        lpo.enterOtp4("0");
+        lpo.enterOtp("1000");
         lpo.clickLogin();
     }
 
