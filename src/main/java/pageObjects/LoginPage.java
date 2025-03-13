@@ -3,12 +3,12 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPageLoc {
+public class LoginPage {
 
      WebDriver driver;
 
     //Constructor
-    public LoginPageLoc(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver=driver;
     }
     //Locators

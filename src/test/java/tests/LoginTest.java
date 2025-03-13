@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.LoginPageLoc;
+import pageObjects.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +24,7 @@ public class LoginTest {
     @Test
     void testLogin()
     {
-        LoginPageLoc lpo = new LoginPageLoc(driver);
+        LoginPage lpo = new LoginPage(driver);
         lpo.setPhoneNumber("9425790844");
         lpo.clickSendOtp();
         lpo.enterOtp1("1");
