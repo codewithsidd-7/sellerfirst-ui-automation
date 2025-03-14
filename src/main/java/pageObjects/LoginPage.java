@@ -15,8 +15,7 @@ public class LoginPage extends BasePage{
 
      WebDriver driver;
 
-
-    //Constructor usigg BasePage
+     //Constructor usigg BasePage
     public LoginPage(WebDriver driver) {
        super(driver);
     }
