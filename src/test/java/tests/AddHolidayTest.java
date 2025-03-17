@@ -48,6 +48,11 @@ public class AddHolidayTest extends BaseClass {
         ahp.clickImportHoliday();
     }
 
+    @Test(priority = 4)
+    void validateuploadedHoliday() {
+        AddHolidayPage ahp = new AddHolidayPage(driver);
+        ahp.printUploadedHoliday();
+    }
 
     @AfterClass
     public void teardown() {

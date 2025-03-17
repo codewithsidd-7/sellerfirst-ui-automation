@@ -22,6 +22,7 @@ public class AddPointsBulkPage extends BasePage {
     @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/reward-points-import-modal/div/div[2]/mat-dialog-actions/div/button[2]")
     private WebElement btn_import_loc;
 
+
     //Action methods
     public void clickRetailer() {
         btn_retailer_loc.click();
@@ -31,7 +32,7 @@ public class AddPointsBulkPage extends BasePage {
         btn_rewardspoints_loc.click();
     }
 
-    public void clicAddPointsInBulk() {
+    public void clickAddPointsInBulk() {
         btn_addpointsinbulk_loc.click();
     }
 

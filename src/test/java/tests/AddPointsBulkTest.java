@@ -40,16 +40,15 @@ public class AddPointsBulkTest extends BaseClass {
         apbp.clickRewardPoints();
     }
 
+
     @Test(priority = 3)
-    void uploadBulkFile() {
+    void uploadBulkFile() throws InterruptedException {
+        Thread.sleep(2000);
         AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
-        apbp.clicAddPointsInBulk();
+        apbp.clickAddPointsInBulk();
+        apbp.uploadRewardFile();
         apbp.clickImportReward();
     }
-
-
-
-
 
 
     @AfterClass
@@ -59,6 +58,6 @@ public class AddPointsBulkTest extends BaseClass {
             driver.quit();
         }
 
-
     }
+
 }
