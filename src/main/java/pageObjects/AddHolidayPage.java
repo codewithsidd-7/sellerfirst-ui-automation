@@ -10,8 +10,6 @@ import java.util.List;
 
 public class AddHolidayPage extends BasePage {
 
-    WebDriver driver;
-
     public AddHolidayPage(WebDriver driver){
         super(driver);
     }
@@ -53,8 +51,6 @@ public class AddHolidayPage extends BasePage {
         String holiday_import = properties.getProperty("holiday_import_path");
         btn_addholiday_loc.sendKeys(holiday_import);
     }
-
-
 
     public void clickImportHoliday() {
         btn_importholiday_loc.click();
