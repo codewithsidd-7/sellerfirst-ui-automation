@@ -20,6 +20,9 @@ public class BaseClass {
         driver.manage().window().maximize();
 
     }
+    public WebDriver accesing(){
+        return driver;
+    }
 
     @AfterClass
     public void teardown() {

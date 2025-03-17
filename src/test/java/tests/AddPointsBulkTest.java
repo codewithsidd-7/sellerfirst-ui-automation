@@ -38,6 +38,7 @@ public class AddPointsBulkTest extends BaseClass {
         AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
         apbp.clickRetailer();
         apbp.clickRewardPoints();
+
     }
 
     @Test(priority = 3)
