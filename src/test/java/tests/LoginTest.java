@@ -13,8 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class LoginTest extends BaseClass {
 
 
-
-
     @Test
     void testLogin()
     {

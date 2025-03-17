@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AddHolidayPage extends BasePage {
 
     WebDriver driver;
 
-    public AddHolidayPage(WebDriver driver) {
+    public AddHolidayPage(WebDriver driver){
         super(driver);
     }
 
@@ -49,8 +50,11 @@ public class AddHolidayPage extends BasePage {
     }
 
     public void uploadHolidayFile() {
-        btn_addholiday_loc.sendKeys("/home/neebal/Downloads/holiday import selenium test.csv");
+        String holiday_import = properties.getProperty("holiday_import_path");
+        btn_addholiday_loc.sendKeys(holiday_import);
     }
+
+
 
     public void clickImportHoliday() {
         btn_importholiday_loc.click();

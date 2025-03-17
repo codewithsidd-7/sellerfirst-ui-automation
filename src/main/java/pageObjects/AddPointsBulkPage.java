@@ -37,7 +37,8 @@ public class AddPointsBulkPage extends BasePage {
     }
 
     public void uploadRewardFile() {
-        btn_uploadfile_loc.sendKeys("/home/neebal/newpoints.csv");
+       String points_import = properties.getProperty("add_points_bulk_path");
+        btn_uploadfile_loc.sendKeys(points_import);
     }
 
     public void clickImportReward() {

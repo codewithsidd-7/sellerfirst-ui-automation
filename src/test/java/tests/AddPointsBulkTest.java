@@ -13,20 +13,11 @@ import pageObjects.LoginPage;
 import java.util.concurrent.TimeUnit;
 
 public class AddPointsBulkTest extends BaseClass {
-    WebDriver driver;
 
-    @BeforeClass
-    public void setup() {
-        driver = new ChromeDriver();
-        String baseUrl = "https://stage.nurture.farm/reward-points";
-        driver.get(baseUrl);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-    }
 
     @Test(priority = 1)
     void testLogin() {
-        LoginPage lpo = new LoginPage(driver);
+        LoginPage lpo = new LoginPage(accesing());
         lpo.setPhoneNumber("9425790844");
         lpo.clickSendOtp();
         lpo.enterOtp("1000");
@@ -35,7 +26,7 @@ public class AddPointsBulkTest extends BaseClass {
 
     @Test(priority = 2)
     void openRewards() {
-        AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
+        AddPointsBulkPage apbp = new AddPointsBulkPage(accesing());
         apbp.clickRetailer();
         apbp.clickRewardPoints();
 
@@ -44,21 +35,12 @@ public class AddPointsBulkTest extends BaseClass {
 
     @Test(priority = 3)
     void uploadBulkFile() throws InterruptedException {
-        Thread.sleep(2000);
-        AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
+        Thread.sleep(2000);//Add explicit wait here until the element loads
+        AddPointsBulkPage apbp = new AddPointsBulkPage(accesing());
         apbp.clickAddPointsInBulk();
         apbp.uploadRewardFile();
         apbp.clickImportReward();
     }
 
-
-    @AfterClass
-    public void teardown() {
-        // Quit WebDriver
-        if (driver != null) {
-            driver.quit();
-        }
-
-    }
 
 }
