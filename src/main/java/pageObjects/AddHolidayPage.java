@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,19 @@ public class AddHolidayPage extends BasePage {
     private WebElement btn_addholiday_loc;
     @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/holiday-import-modal/div/div[2]/div/div/mat-dialog-actions/div/button[2]")
     private WebElement btn_importholiday_loc;
+    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr")
+    private List<WebElement> rows;
+    int rowsize = rows.size();
+    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr/td")
+    private List<WebElement> cols;
+    int colsize = cols.size();
+
+//    for (int i=1; i<=rowsize;i++){
+//        for (int j = 1; j<colsize; j++){
+//            System.out.println(driver.findElement(By.xpath("/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr["+ i +"]/td["+ j +"]")).getText());
+//        }
+//    }
+
 
 
     //Action methods

@@ -15,12 +15,13 @@ public class AddHolidayTest extends BaseClass {
     WebDriver driver;
 
     @BeforeClass
-    void setup() {
+    public void setup() {
         driver = new ChromeDriver();
         String baseUrl = "https://stage.nurture.farm/reward-points";
         driver.get(baseUrl);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+
     }
 
     @Test(priority = 1)
@@ -47,6 +48,7 @@ public class AddHolidayTest extends BaseClass {
         ahp.clickImportHoliday();
     }
 
+
     @AfterClass
     public void teardown() {
         // Quit WebDriver
@@ -56,3 +58,4 @@ public class AddHolidayTest extends BaseClass {
 
     }
 }
+

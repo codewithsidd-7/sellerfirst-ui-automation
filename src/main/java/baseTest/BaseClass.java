@@ -9,15 +9,16 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
-    WebDriver driver;
+    public WebDriver driver;
 
     @BeforeClass
-    void setup() {
+    public void setup() {
         driver = new ChromeDriver();
         String baseUrl = "https://stage.nurture.farm/reward-points";
         driver.get(baseUrl);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+
     }
 
     @AfterClass
