@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AddHolidayPage extends BasePage {
 
-    WebDriver driver;
+
 
     public AddHolidayPage(WebDriver driver) {
         super(driver);
