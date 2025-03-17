@@ -13,6 +13,7 @@ import java.util.List;
 
 public class LoginPageLoc {
 
+<<<<<<< Updated upstream:src/main/java/pages/LoginPageLoc.java
      WebDriver driver;
     WebDriverWait wait;
 
@@ -24,6 +25,9 @@ public class LoginPageLoc {
 
 
         PageFactory.initElements(driver,this);
+=======
+
+>>>>>>> Stashed changes:src/main/java/pageObjects/LoginPage.java
 
     }
     //Locators
