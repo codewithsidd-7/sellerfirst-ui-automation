@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
+
     public WebDriver driver;
 
     @BeforeClass

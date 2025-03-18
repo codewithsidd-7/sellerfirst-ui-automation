@@ -5,13 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AddHolidayPage extends BasePage {
 
-
-
-    public AddHolidayPage(WebDriver driver) {
+    public AddHolidayPage(WebDriver driver){
         super(driver);
     }
 
@@ -27,18 +26,12 @@ public class AddHolidayPage extends BasePage {
     @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/holiday-import-modal/div/div[2]/div/div/mat-dialog-actions/div/button[2]")
     private WebElement btn_importholiday_loc;
     @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr")
+
     private List<WebElement> rows;
     int rowsize = rows.size();
     @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr/td")
     private List<WebElement> cols;
     int colsize = cols.size();
-
-//    for (int i=1; i<=rowsize;i++){
-//        for (int j = 1; j<colsize; j++){
-//            System.out.println(driver.findElement(By.xpath("/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr["+ i +"]/td["+ j +"]")).getText());
-//        }
-//    }
-
 
 
     //Action methods
@@ -55,11 +48,19 @@ public class AddHolidayPage extends BasePage {
     }
 
     public void uploadHolidayFile() {
-        btn_addholiday_loc.sendKeys("/home/neebal/Downloads/holiday import selenium test.csv");
+        String holiday_import = properties.getProperty("holiday_import_path");
+        btn_addholiday_loc.sendKeys(holiday_import);
     }
 
     public void clickImportHoliday() {
         btn_importholiday_loc.click();
+    }
+    public void printUploadedHoliday(){
+        for (int i=1; i<=rowsize;i++){
+            for (int j = 1; j<colsize; j++){
+                System.out.println(driver.findElement(By.xpath("/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr["+ i +"]/td["+ j +"]")).getText());
+            }
+        }
     }
 }
 

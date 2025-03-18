@@ -32,20 +32,15 @@ public class AddPointsBulkTest extends BaseClass {
 
     }
 
+
     @Test(priority = 3)
-    void uploadBulkFile() {
+    void uploadBulkFile() throws InterruptedException {
+        Thread.sleep(2000);//Add explicit wait here until the element loads
         AddPointsBulkPage apbp = new AddPointsBulkPage(accesing());
-        apbp.clicAddPointsInBulk();
+        apbp.clickAddPointsInBulk();
+        apbp.uploadRewardFile();
         apbp.clickImportReward();
     }
-
-
-
-
-
-
-
-
 
 
 }

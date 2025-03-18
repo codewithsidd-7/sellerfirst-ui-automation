@@ -9,12 +9,10 @@ import org.testng.annotations.Test;
 import pageObjects.AddHolidayPage;
 import pageObjects.LoginPage;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class AddHolidayTest extends BaseClass {
-
-
-
 
     @Test(priority = 1)
     void testLogin() {
@@ -40,7 +38,12 @@ public class AddHolidayTest extends BaseClass {
         ahp.clickImportHoliday();
     }
 
-
+    @Test(priority = 4)
+    void validateuploadedHoliday() throws InterruptedException {
+        Thread.sleep(2000);
+        AddHolidayPage ahp = new AddHolidayPage(accesing());
+        ahp.printUploadedHoliday();
+    }
 
 }
 
