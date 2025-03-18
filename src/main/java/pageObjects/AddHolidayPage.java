@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.FetchProperties;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -15,15 +17,15 @@ public class AddHolidayPage extends BasePage {
     }
 
     //Locators
-    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav/div/mat-nav-list/app-menu-list-item/div[10]/mat-list-item")
+    @FindBy(css = "img[src*=\"profile\"]")
     private WebElement btn_profile_loc;
-    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav/div/mat-nav-list/app-menu-list-item/div[10]/div/a[3]/span/div")
+    @FindBy(xpath = "//div[contains(text(), 'Holidays')]")
     private WebElement btn_holiday_loc;
-    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[1]/div/button")
+    @FindBy(css="button[class*=\"mat-stroked-button\"] ")
     private WebElement btn_uploadholiday_loc;
-    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/holiday-import-modal/div/div[2]/div/div/upload-media/input")
+    @FindBy(css = "input[type=\"file\"]")
     private WebElement btn_addholiday_loc;
-    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/holiday-import-modal/div/div[2]/div/div/mat-dialog-actions/div/button[2]")
+    @FindBy(css="button[class*=primary-button]")
     private WebElement btn_importholiday_loc;
     @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/edd-holidays/div/div/div/mat-card[2]/div/table/tbody/tr")
 
@@ -49,7 +51,9 @@ public class AddHolidayPage extends BasePage {
 
     public void uploadHolidayFile() {
         String holiday_import = properties.getProperty("holiday_import_path");
-        btn_addholiday_loc.sendKeys(holiday_import);
+        String absolutePath=FetchProperties.fetchAbsoluteFilePath(holiday_import);
+
+        btn_addholiday_loc.sendKeys(absolutePath);
     }
 
     public void clickImportHoliday() {

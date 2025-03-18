@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -15,5 +16,9 @@ public class FetchProperties {
             throw new RuntimeException("Unable to load properties file: " + path);
         }
         return properties;
+    }
+    public static String fetchAbsoluteFilePath(String relative){
+        File file=new File(relative);
+        return file.getAbsolutePath();
     }
 }
