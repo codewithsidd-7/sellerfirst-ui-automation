@@ -45,7 +45,4 @@ public class AddPointsBulkPage extends BasePage {
         btn_import_loc.click();
     }
 
-
-
-
 }
