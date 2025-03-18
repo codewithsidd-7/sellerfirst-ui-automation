@@ -26,7 +26,7 @@ public class RemovePointsBulkTest extends BaseClass {
 
     @Test(priority = 3)
     void uploadBulkFile() throws InterruptedException {
-        //Thread.sleep(2000);//Add explicit wait here until the element loads
+        Thread.sleep(2000);//Add explicit wait here until the element loads
         RemovePointsBulkPage rpbp = new RemovePointsBulkPage(accesing());
         rpbp.clickRemovePointsInBulk();
         rpbp.uploadRewardFile();
