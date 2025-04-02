@@ -25,12 +25,12 @@ public class BaseClass {
         return driver;
     }
 
-//    @AfterClass
-//    public void teardown() {
-//        // Quit WebDriver
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterClass
+    public void teardown() {
+        // Quit WebDriver
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
 

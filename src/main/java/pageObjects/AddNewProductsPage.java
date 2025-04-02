@@ -44,6 +44,16 @@ public class AddNewProductsPage extends BasePage {
     private WebElement div_outclick_loc;
     @FindBy(xpath = "/html/body/div[2]/div/div/snack-bar-container/div/div/simple-snack-bar/span")
     private WebElement popup_addentandplant_loc;
+    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/my-product-catalogue/div/div/div/div/mat-card[1]/div[2]/button[2]")
+    private WebElement btn_uploadproductdetails_loc;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/div/div[1]/div[2]/upload-media/input")
+    private WebElement btn_uploadprice_loc;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/div/div[2]/div[2]/upload-media/input")
+    private WebElement btn_uploadinventory_loc;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/form/div/ng-select/div/div/div[2]/input")
+    private WebElement slt_enterprisemycat_loc;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/div/mat-dialog-actions/div/button[2]")
+    private WebElement btn_importmycat_loc;
 
 
 
@@ -128,7 +138,33 @@ public class AddNewProductsPage extends BasePage {
         else{
             System.out.println("Pop-up is Displayed with the following : " + popup_addentandplant_loc.getText());
         }
+    }
 
+    public void clickUploadProductsDetails () {
+        btn_uploadproductdetails_loc.click();
+    }
+
+    public void uploadPriceFile() {
+        String relative_path = properties.getProperty("price_inventory_path");
+        String price_import = FetchProperties.fetchAbsoluteFilePath(relative_path);
+
+        btn_uploadprice_loc.sendKeys(price_import);
+    }
+
+    public void uploadInventoryFile() {
+        String relative_path = properties.getProperty("inventory_import_path");
+        String inventory_import = FetchProperties.fetchAbsoluteFilePath(relative_path);
+
+        btn_uploadinventory_loc.sendKeys(inventory_import);
+    }
+
+    public void selectEnterpriseForMyCat(){
+        slt_enterprisemycat_loc.sendKeys("Godrej Agrovet Limited");
+        slt_enterprisemycat_loc.sendKeys(Keys.ENTER);
+    }
+
+    public void clickImportProductDetails () {
+        btn_importmycat_loc.click();
     }
 
 

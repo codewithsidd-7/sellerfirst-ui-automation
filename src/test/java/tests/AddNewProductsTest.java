@@ -51,6 +51,7 @@ public class AddNewProductsTest extends BaseClass {
         anpp.selectEnterprise();
         Thread.sleep(1000);
         anpp.selectPlant();
+        Thread.sleep(1000);
         anpp.clickAddProducts();
         anpp.addEnterpriseAndPlantConfirmation();
     }
@@ -58,8 +59,21 @@ public class AddNewProductsTest extends BaseClass {
     @Test(priority = 6)
     void openMyCatalogue() throws InterruptedException {
         driver.get("https://stage.nurture.farm/my-catalogue");
-        Thread.sleep(3000);
+        Thread.sleep(6000);
     }
+
+    @Test(priority = 7)
+    void openUploadProductDetails() throws InterruptedException {
+        AddNewProductsPage anpp = new AddNewProductsPage(accesing());
+        Thread.sleep(1000);
+        anpp.clickUploadProductsDetails();
+        anpp.uploadPriceFile();
+        anpp.uploadInventoryFile();
+        anpp.selectEnterpriseForMyCat();
+        anpp.clickImportProductDetails();
+
+    }
+
 
 
 
