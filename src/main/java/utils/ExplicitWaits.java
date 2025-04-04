@@ -9,32 +9,38 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ExplicitWaits extends BaseClass {
-     WebDriver driver=accesing();
-      WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+public class ExplicitWaits {
+    private WebDriver driver;
+    private WebDriverWait wait;
 
-
-    public  WebElement waitForVisibility(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public ExplicitWaits(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Default timeout of 10 seconds
     }
 
-
-    public WebElement waitForClickable(By locator) {
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    // Wait for an element to be visible
+    public void waitForElementToBeVisible(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-
-    public boolean waitForInvisibility(By locator) {
-        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    // Wait for an element to be clickable
+    public void waitForElementToBeClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-
-    public boolean waitForTextToBePresent(By locator, String text) {
-        return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+    // Wait for an element to be present in the DOM
+    public void waitForElementToBePresent(WebElement element) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(element.getAttribute("id"))));
     }
 
-
-    public void waitForFrameAndSwitchToIt(By frameLocator) {
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
+    // Wait for an element to disappear
+    public void waitForElementToDisappear(WebElement element) {
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
+
+    // Wait for an element to be selected (checkbox, radio button)
+    public void waitForElementToBeSelected(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeSelected(element));
+    }
+
 }

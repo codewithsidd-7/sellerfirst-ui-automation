@@ -1,14 +1,23 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import utils.ExplicitWaits;
 import utils.FetchProperties;
 
+import javax.swing.*;
+
 public class AddNewProductsPage extends BasePage {
+    private ExplicitWaits wait;
+
     public AddNewProductsPage (WebDriver driver){
     super(driver);
+    this.wait=new ExplicitWaits(driver);
+
     }
 
     //Locators
@@ -50,25 +59,35 @@ public class AddNewProductsPage extends BasePage {
     private WebElement btn_uploadprice_loc;
     @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/div/div[2]/div[2]/upload-media/input")
     private WebElement btn_uploadinventory_loc;
-    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/form/div/ng-select/div/div/div[2]/input")
+    @FindBy(css="ng-select[placeholder=\"Select Enterprise\"] input[type=\"text\"]")
     private WebElement slt_enterprisemycat_loc;
     @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/catalogue-import-modal/div/div[2]/div/mat-dialog-actions/div/button[2]")
     private WebElement btn_importmycat_loc;
+    @FindBy(css="tbody[role=\"rowgroup\"]")
+    private WebElement searched_product_details_loc;
+    @FindBy(css="div[class*=\"app-spinner\"]")
+    private WebElement loader_mycatalogue_loc;
+    @FindBy(css="ng-dropdown-panel[role=\"listbox\"] div[class*=\"ng-option\"]")
+    private WebElement mycatalogue_entrprise_option;
 
 
 
 
 
-    //Action methods
+
+
     public void clickCatalogue() {
         btn_cat_loc.click();
     }
 
     public void clickMasterCatalogue() {
         btn_mastercat_loc.click();
+
     }
 
     public void clickShowAll() {
+        wait.waitForElementToBeVisible(btn_showall_loc);
+
         btn_showall_loc.click();
     }
 
@@ -105,9 +124,12 @@ public class AddNewProductsPage extends BasePage {
 
     public void clickSearchButton() {
         btn_search_loc.click();
+
     }
 
     public void clickTickBox() {
+        wait.waitForElementToBeVisible(searched_product_details_loc);
+
         cbx_checkbox_loc.click();
     }
 
@@ -116,17 +138,19 @@ public class AddNewProductsPage extends BasePage {
     }
 
     public void selectEnterprise(){
-        slt_enterprise_loc.sendKeys("Godrej Agrovet Limited");
+        slt_enterprise_loc.sendKeys(properties.getProperty("enterprise_name"));
         slt_enterprise_loc.sendKeys(Keys.ENTER);
     }
 
     public void selectPlant()  {
-        slt_plant_loc.sendKeys("G002");
+
+        slt_plant_loc.sendKeys(properties.getProperty("enterprise_plant_code"));
         slt_plant_loc.sendKeys(Keys.ENTER);
 
     }
 
     public void clickAddProducts() {
+        wait.waitForElementToBeVisible(div_outclick_loc);
         div_outclick_loc.click();
         btn_addproduct_loc.click();
     }
@@ -141,10 +165,13 @@ public class AddNewProductsPage extends BasePage {
     }
 
     public void clickUploadProductsDetails () {
+        wait.waitForElementToDisappear(loader_mycatalogue_loc);
         btn_uploadproductdetails_loc.click();
     }
 
     public void uploadPriceFile() {
+
+
         String relative_path = properties.getProperty("price_inventory_path");
         String price_import = FetchProperties.fetchAbsoluteFilePath(relative_path);
 
@@ -159,8 +186,14 @@ public class AddNewProductsPage extends BasePage {
     }
 
     public void selectEnterpriseForMyCat(){
-        slt_enterprisemycat_loc.sendKeys("Godrej Agrovet Limited");
-        slt_enterprisemycat_loc.sendKeys(Keys.ENTER);
+
+       slt_enterprisemycat_loc.sendKeys(properties.getProperty("enterprise_name"));
+       slt_enterprisemycat_loc.sendKeys(Keys.ENTER);
+
+
+
+
+
     }
 
     public void clickImportProductDetails () {

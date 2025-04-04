@@ -14,6 +14,7 @@ public class RemovePointsBulkTest extends BaseClass {
         lpo.clickSendOtp();
         lpo.enterOtp("1000");
         lpo.clickLogin();
+        System.out.println();
     }
 
     @Test(priority = 2)
