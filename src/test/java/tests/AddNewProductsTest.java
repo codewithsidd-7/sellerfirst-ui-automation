@@ -8,11 +8,10 @@ import pageObjects.LoginPage;
 import utils.ExplicitWaits;
 
 public class AddNewProductsTest extends BaseClass {
-
+    AddNewProductsPage anpp= new AddNewProductsPage(driver);
 
     @Test(priority = 1)
     void openMasterCatalogue() throws InterruptedException {
-        AddNewProductsPage anpp = new AddNewProductsPage(driver);
         anpp.clickCatalogue();
         anpp.clickMasterCatalogue();
         anpp.clickShowAll();
@@ -20,7 +19,6 @@ public class AddNewProductsTest extends BaseClass {
 
     @Test(priority = 2)
     void uploadMasterCatalogueFile() {
-        AddNewProductsPage anpp = new AddNewProductsPage(driver);
         anpp.clickCatalogueImport();
         anpp.uploadMasterCatalogueFile();
         anpp.clickUploadCatalogueImport();
@@ -30,7 +28,6 @@ public class AddNewProductsTest extends BaseClass {
 
     @Test(priority = 3)
     void searchingAddedProduct() throws InterruptedException {
-        AddNewProductsPage anpp = new AddNewProductsPage(driver);
         anpp.enterProductInSearch();
         anpp.clickSearchButton();
        // Thread.sleep(2000);
@@ -38,7 +35,6 @@ public class AddNewProductsTest extends BaseClass {
 
     @Test(priority = 4)
     void addingProductToMyCatalogue() throws InterruptedException {
-        AddNewProductsPage anpp = new AddNewProductsPage(driver);
         anpp.clickTickBox();
         anpp.clickAddProductsToMyCatalogue();
         anpp.selectEnterprise();
@@ -56,7 +52,6 @@ public class AddNewProductsTest extends BaseClass {
 
     @Test(priority = 6)
     void openUploadProductDetails() throws InterruptedException {
-        AddNewProductsPage anpp = new AddNewProductsPage(driver);
         anpp.clickUploadProductsDetails();
         Thread.sleep(2000);
         anpp.selectEnterpriseForMyCat();

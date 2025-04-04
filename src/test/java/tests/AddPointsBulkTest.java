@@ -13,12 +13,11 @@ import pageObjects.LoginPage;
 import java.util.concurrent.TimeUnit;
 
 public class AddPointsBulkTest extends BaseClass {
-
+    AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
 
 
     @Test(priority = 1)
     void openRewards() {
-        AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
         apbp.clickRetailer();
         apbp.clickRewardPoints();
     }
@@ -27,7 +26,6 @@ public class AddPointsBulkTest extends BaseClass {
     @Test(priority = 2)
     void uploadBulkFile() throws InterruptedException {
         Thread.sleep(2000);//Add explicit wait here until the element loads
-        AddPointsBulkPage apbp = new AddPointsBulkPage(driver);
         apbp.clickAddPointsInBulk();
         apbp.uploadRewardFile();
         apbp.clickImportReward();

@@ -7,17 +7,16 @@ import pageObjects.AddRewardPointsPage;
 import pageObjects.LoginPage;
 
 public class AddRewardPointsTest extends BaseClass {
+    AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
 
     @Test(priority = 1)
     void openRewards() {
-        AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
         arpp.clickRetailers();
         arpp.clickRewards();
     }
 
     @Test(priority = 2)
     void searchRetailer() {
-        AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
         arpp.enterRetailerNumber();
         arpp.searchRetailer();
         arpp.clickEditRetailer();
@@ -25,7 +24,6 @@ public class AddRewardPointsTest extends BaseClass {
 
     @Test(priority = 3)
     void addRewardPoints() {
-        AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
         arpp.selectAddPoints();
         arpp.selectReasonToAddPoints();
         arpp.selectStartDate();
@@ -37,17 +35,8 @@ public class AddRewardPointsTest extends BaseClass {
 
     @Test(priority = 4)
     void validateConfirmationMessage() {
-        AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
         arpp.validatePopupMessage();
     }
-
-
-
-
-
-
-
-
 }
 
 

@@ -14,13 +14,15 @@ public class BaseClass {
 
     public WebDriver driver;
     private LoginPage loginPage;
+    public BaseClass(){
+        driver=new ChromeDriver();
+    }
 
 
 
 
     @BeforeClass
     public void setup() {
-        driver = new ChromeDriver();
         String baseUrl = "https://stage.nurture.farm/reward-points";
         driver.get(baseUrl);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -29,7 +31,7 @@ public class BaseClass {
         loginPage.setPhoneNumber("9425790844");
         loginPage.clickSendOtp();
         loginPage.enterOtp("1000");
-        loginPage.clickLogin();
+       // loginPage.clickLogin();
 
 
     }

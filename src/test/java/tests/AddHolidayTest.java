@@ -13,17 +13,16 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class AddHolidayTest extends BaseClass {
+    AddHolidayPage ahp = new AddHolidayPage(driver);
 
     @Test(priority = 1)
     void openHoliday() {
-        AddHolidayPage ahp = new AddHolidayPage(driver);
         ahp.clickProfile();
         ahp.clickHoliday();
     }
-
     @Test(priority = 2)
     void uploadHoliday() {
-        AddHolidayPage ahp = new AddHolidayPage(driver);
+
         ahp.clickUploadHoliday();
         ahp.uploadHolidayFile();
         ahp.clickImportHoliday();
@@ -32,7 +31,6 @@ public class AddHolidayTest extends BaseClass {
     @Test(priority = 3)
     void validateuploadedHoliday() throws InterruptedException {
         Thread.sleep(2000);
-        AddHolidayPage ahp = new AddHolidayPage(driver);
         ahp.printUploadedHoliday();
     }
 }
