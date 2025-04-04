@@ -4,6 +4,7 @@ import baseTest.BaseClass;
 import org.testng.annotations.Test;
 import pageObjects.AddNewProductsPage;
 import pageObjects.LoginPage;
+import utils.ExplicitWaits;
 
 public class AddNewProductsTest extends BaseClass {
 
@@ -71,7 +72,6 @@ public class AddNewProductsTest extends BaseClass {
         anpp.uploadInventoryFile();
         anpp.selectEnterpriseForMyCat();
         anpp.clickImportProductDetails();
-
     }
 
 
