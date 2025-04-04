@@ -22,6 +22,7 @@ public class AddPointsBulkTest extends BaseClass {
         lpo.clickSendOtp();
         lpo.enterOtp("1000");
         lpo.clickLogin();
+
     }
 
     @Test(priority = 2)

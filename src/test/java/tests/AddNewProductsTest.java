@@ -22,7 +22,6 @@ public class AddNewProductsTest extends BaseClass {
         AddNewProductsPage anpp = new AddNewProductsPage(accesing());
         anpp.clickCatalogue();
         anpp.clickMasterCatalogue();
-        Thread.sleep(2000);
         anpp.clickShowAll();
     }
 
@@ -41,7 +40,7 @@ public class AddNewProductsTest extends BaseClass {
         AddNewProductsPage anpp = new AddNewProductsPage(accesing());
         anpp.enterProductInSearch();
         anpp.clickSearchButton();
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
     }
 
     @Test(priority = 5)
@@ -50,9 +49,8 @@ public class AddNewProductsTest extends BaseClass {
         anpp.clickTickBox();
         anpp.clickAddProductsToMyCatalogue();
         anpp.selectEnterprise();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         anpp.selectPlant();
-        Thread.sleep(1000);
         anpp.clickAddProducts();
         anpp.addEnterpriseAndPlantConfirmation();
     }
@@ -60,17 +58,19 @@ public class AddNewProductsTest extends BaseClass {
     @Test(priority = 6)
     void openMyCatalogue() throws InterruptedException {
         driver.get("https://stage.nurture.farm/my-catalogue");
-        Thread.sleep(6000);
+
     }
 
     @Test(priority = 7)
     void openUploadProductDetails() throws InterruptedException {
         AddNewProductsPage anpp = new AddNewProductsPage(accesing());
-        Thread.sleep(1000);
         anpp.clickUploadProductsDetails();
+
+        Thread.sleep(2000);
+        anpp.selectEnterpriseForMyCat();
         anpp.uploadPriceFile();
         anpp.uploadInventoryFile();
-        anpp.selectEnterpriseForMyCat();
+
         anpp.clickImportProductDetails();
     }
 
