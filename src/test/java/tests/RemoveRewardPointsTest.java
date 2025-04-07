@@ -7,32 +7,32 @@ import pageObjects.LoginPage;
 import pageObjects.RemoveRewardPointsPage;
 
 public class RemoveRewardPointsTest extends BaseClass {
-    @Test(priority = 1)
-    void login() {
-        LoginPage lpo = new LoginPage(accesing());
-        lpo.setPhoneNumber("9425790844");
-        lpo.clickSendOtp();
-        lpo.enterOtp("1000");
-        lpo.clickLogin();
-    }
+    RemoveRewardPointsPage rrpp = new RemoveRewardPointsPage(driver);
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     void openRewards() {
-        RemoveRewardPointsPage rrpp = new RemoveRewardPointsPage(accesing());
         rrpp.clickRetailers();
         rrpp.clickRewards();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     void searchRetailer() {
-        RemoveRewardPointsPage rrpp = new RemoveRewardPointsPage(accesing());
         rrpp.enterRetailerNumber();
         rrpp.searchRetailer();
         rrpp.clickEditRetailer();
     }
     @Test(priority = 3)
     void removeRewardPoints() {
-        RemoveRewardPointsPage rrpp = new RemoveRewardPointsPage(accesing());
         rrpp.selectRemovePoints();
+        rrpp.selectReasonDropdown();
+        rrpp.selectReason();
+        rrpp.addPointsValue();
+        rrpp.clickConfirmButton();
+        rrpp.clickYesButton();
+    }
+    @Test(priority = 4)
+    void validateConfirmationMessage() {
+        rrpp.validatePopupMessage();
     }
 }
+

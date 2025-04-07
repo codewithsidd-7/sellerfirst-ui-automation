@@ -6,7 +6,7 @@ import java.util.Properties;
 
 //Global Constructor
 public class BasePage {
-    static Properties properties;
+    public static Properties properties;
     static {
         properties = FetchProperties.fetchConfigValues();
     }

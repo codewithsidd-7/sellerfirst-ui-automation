@@ -29,6 +29,14 @@ public class RemoveRewardPointsPage extends BasePage{
     private WebElement slt_reasons_dropdownloc;
     @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/add-points/div/div/div/mat-card/mat-card-content/form/div[2]/div[1]/div/div/ng-select/ng-dropdown-panel/div/div[2]/div[2]")
     private WebElement slt_reason_loc;
+    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/add-points/div/div/div/mat-card/mat-card-content/form/div[3]/div/mat-form-field/div/div[1]/div[3]/input")
+    private WebElement fld_points_remove_loc;
+    @FindBy(xpath = "/html/body/anms-root/div/mat-sidenav-container/mat-sidenav-content/div/div/div[2]/add-points/div/div/div/mat-card/mat-card-content/form/div[4]/div/button[2]")
+    private WebElement btn_confirm_loc;
+    @FindBy(xpath = "/html/body/div[2]/div[2]/div/mat-dialog-container/pop-up/div/mat-dialog-actions/div/button[2]")
+    private WebElement btn_yes_confirm_loc;
+    @FindBy(xpath = "/html/body/div[2]/div/div/snack-bar-container")
+    private WebElement pop_up_confirmation_loc;
 
 
 
@@ -64,6 +72,29 @@ public class RemoveRewardPointsPage extends BasePage{
 
     public void selectReason(){
         slt_reason_loc.click();
+    }
+
+    public void addPointsValue(){
+        fld_points_remove_loc.sendKeys(properties.getProperty("remove_points_value"));
+    }
+
+    public void clickConfirmButton(){
+        btn_confirm_loc.click();
+    }
+
+    public void clickYesButton(){
+        btn_yes_confirm_loc.click();
+    }
+
+
+
+    public void validatePopupMessage() {
+        if (pop_up_confirmation_loc.isDisplayed()){
+            System.out.println("Pop-up is Displayed with following message : " +pop_up_confirmation_loc.getText());
+        }
+        else {
+            System.out.println("Pop-up is not Displayed with following message : " +pop_up_confirmation_loc.getText());
+        }
     }
 
 

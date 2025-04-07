@@ -10,6 +10,8 @@ import pageObjects.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static pageObjects.BasePage.properties;
+
 public class BaseClass {
 
     public WebDriver driver;
@@ -28,21 +30,21 @@ public class BaseClass {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         loginPage=new LoginPage(driver);
-        loginPage.setPhoneNumber("9425790844");
+        loginPage.setPhoneNumber(properties.getProperty("login_retailer_number"));
         loginPage.clickSendOtp();
         loginPage.enterOtp("1000");
-       // loginPage.clickLogin();
+        loginPage.clickLogin();
 
 
     }
 
 
-    @AfterClass
-    public void teardown() {
-
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterClass
+//    public void teardown() {
+//
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }
 
