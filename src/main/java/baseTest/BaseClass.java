@@ -31,7 +31,7 @@ public class BaseClass {
         loginPage.setPhoneNumber("9425790844");
         loginPage.clickSendOtp();
         loginPage.enterOtp("1000");
-       // loginPage.clickLogin();
+        loginPage.clickLogin();
 
 
     }
