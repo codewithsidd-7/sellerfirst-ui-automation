@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.AddHolidayPage;
 import pageObjects.LoginPage;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
