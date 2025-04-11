@@ -42,12 +42,12 @@ public class BaseClass {
     }
 
 
-    @AfterClass
-    public void teardown() {
-
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterClass
+//    public void teardown() {
+//
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }
 
