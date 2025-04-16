@@ -1,11 +1,13 @@
 package tests;
 
 import baseTest.BaseClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.AddNewProductsPage;
 import pageObjects.AddRewardPointsPage;
 import pageObjects.LoginPage;
 
+@Listeners(listeners.TestListener.class)
 public class AddRewardPointsTest extends BaseClass {
     AddRewardPointsPage arpp = new AddRewardPointsPage(driver);
 

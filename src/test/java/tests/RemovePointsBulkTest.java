@@ -1,11 +1,13 @@
 package tests;
 
 import baseTest.BaseClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.AddPointsBulkPage;
 import pageObjects.LoginPage;
 import pageObjects.RemovePointsBulkPage;
 
+@Listeners(listeners.TestListener.class)
 public class RemovePointsBulkTest extends BaseClass {
     RemovePointsBulkPage rpbp = new RemovePointsBulkPage(driver);
 

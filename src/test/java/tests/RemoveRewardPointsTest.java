@@ -1,11 +1,13 @@
 package tests;
 
 import baseTest.BaseClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.AddRewardPointsPage;
 import pageObjects.LoginPage;
 import pageObjects.RemoveRewardPointsPage;
 
+@Listeners(listeners.TestListener.class)
 public class RemoveRewardPointsTest extends BaseClass {
     RemoveRewardPointsPage rrpp = new RemoveRewardPointsPage(driver);
 

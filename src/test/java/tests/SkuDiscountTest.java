@@ -2,9 +2,11 @@ package tests;
 
 import baseTest.BaseClass;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.SkuDiscountPage;
 
+@Listeners(listeners.TestListener.class)
 public class SkuDiscountTest extends BaseClass {
     SkuDiscountPage sdp = new SkuDiscountPage(driver);
 

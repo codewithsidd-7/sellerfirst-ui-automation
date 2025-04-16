@@ -2,11 +2,13 @@ package tests;
 
 import baseTest.BaseClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.AddNewProductsPage;
 import pageObjects.LoginPage;
 import utils.ExplicitWaits;
 
+@Listeners(listeners.TestListener.class)
 public class AddNewProductsTest extends BaseClass {
     AddNewProductsPage anpp= new AddNewProductsPage(driver);
 

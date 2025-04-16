@@ -1,9 +1,11 @@
 package tests;
 
 import baseTest.BaseClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.OrderFlowPage;
 
+@Listeners(listeners.TestListener.class)
 public class OrderDeliveryTest extends BaseClass {
     OrderFlowPage orderFlowPage=new OrderFlowPage(driver);
     @Test(priority = 1)

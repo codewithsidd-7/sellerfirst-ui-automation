@@ -12,7 +12,6 @@ public class SkuDiscountPage extends BasePage{
     public SkuDiscountPage(WebDriver driver) {
         super(driver);
         this.explicitWaits=new ExplicitWaits(driver);
-
     }
 
     //Locators
