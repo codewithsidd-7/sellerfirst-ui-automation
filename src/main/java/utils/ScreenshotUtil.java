@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class ScreenshotUtil extends BaseClass {
 
-    //Define screenshot location and naming pattern
+
     private static final String SCREENSHOTS_DIR = "src/main/resources/screenshots/";
     private static final String FILE_NAME_PATTERN = "screenshot_yyyyMMdd_HHmmssSSS.png";
 

@@ -1,34 +1,26 @@
 package tests;
 
 import baseTest.BaseClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.AddPointsBulkPage;
 import pageObjects.LoginPage;
 import pageObjects.RemovePointsBulkPage;
 
+@Listeners(listeners.TestListener.class)
 public class RemovePointsBulkTest extends BaseClass {
-    @Test(priority = 1)
-    void testLogin() {
-        LoginPage lpo = new LoginPage(accesing());
-        lpo.setPhoneNumber("9425790844");
-        lpo.clickSendOtp();
-        lpo.enterOtp("1000");
-        lpo.clickLogin();
-        System.out.println();
-    }
+    RemovePointsBulkPage rpbp = new RemovePointsBulkPage(driver);
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     void openRewards() {
-        RemovePointsBulkPage rpbp = new RemovePointsBulkPage(accesing());
         rpbp.clickRetailer();
         rpbp.clickRewardPoints();
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     void uploadBulkFile() throws InterruptedException {
         Thread.sleep(2000);//Add explicit wait here until the element loads
-        RemovePointsBulkPage rpbp = new RemovePointsBulkPage(accesing());
         rpbp.clickRemovePointsInBulk();
         rpbp.uploadRewardFile();
         rpbp.clickImportReward();
