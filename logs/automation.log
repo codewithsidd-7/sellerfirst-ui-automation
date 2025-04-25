@@ -26,3 +26,52 @@
 11:49:26.843 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:68)oggger - Starting test: validateConfirmationMessage
 11:49:27.143 [main] DEBUG tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:71)oggger - Validated confirmation popup message
 11:49:27.143 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:73)oggger - Finished test: validateConfirmationMessage
+16:48:20.229 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:16)oggger - Starting test: openRewards
+16:48:30.555 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:29)oggger - Starting test: searchRetailer
+16:48:40.751 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:45)oggger - Starting test: removeRewardPoints
+16:49:04.555 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:16)oggger - Starting test: openRewards
+16:49:10.940 [main] DEBUG tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:19)oggger - Clicked on 'Retailers'
+16:49:11.042 [main] DEBUG tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:22)oggger - Clicked on 'Rewards'
+16:49:11.042 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:24)oggger - Finished test: openRewards
+16:49:11.052 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:29)oggger - Starting test: searchRetailer
+16:49:11.135 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:32)oggger - Entered retailer number
+16:49:11.192 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:35)oggger - Searched for retailer
+16:49:13.377 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:38)oggger - Clicked on 'Edit Retailer'
+16:49:13.377 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:40)oggger - Finished test: searchRetailer
+16:49:13.379 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:45)oggger - Starting test: removeRewardPoints
+16:49:13.441 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:48)oggger - Selected 'Remove Points'
+16:49:13.497 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:51)oggger - Opened reason dropdown
+16:49:13.553 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:54)oggger - Selected reason for point removal
+16:49:13.611 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:57)oggger - Entered points value
+16:49:13.678 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:60)oggger - Clicked on 'Confirm'
+16:49:21.167 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:63)oggger - Confirmed removal with 'Yes'
+16:49:21.168 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:65)oggger - Finished test: removeRewardPoints
+16:49:21.170 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:70)oggger - Starting test: validateConfirmationMessage
+16:49:21.465 [main] DEBUG tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:73)oggger - Validated confirmation popup message
+16:49:21.465 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:75)oggger - Finished test: validateConfirmationMessage
+16:50:05.918 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:16)oggger - Starting test: openRewards
+16:50:16.170 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:29)oggger - Starting test: searchRetailer
+16:54:12.100 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:16)oggger - Starting test: openRewards
+16:54:22.365 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:29)oggger - Starting test: searchRetailer
+16:54:32.578 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:45)oggger - Starting test: removeRewardPoints
+16:54:42.732 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:70)oggger - Starting test: validateConfirmationMessage
+11:37:31.278 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:16)oggger - Starting test: openRewards
+11:37:38.691 [main] DEBUG tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:19)oggger - Clicked on 'Retailers'
+11:37:38.783 [main] DEBUG tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:22)oggger - Clicked on 'Rewards'
+11:37:38.783 [main] INFO  tests.RemoveRewardPointsTest.openRewards(RemoveRewardPointsTest.java:24)oggger - Finished test: openRewards
+11:37:38.793 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:29)oggger - Starting test: searchRetailer
+11:37:38.918 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:32)oggger - Entered retailer number
+11:37:38.992 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:35)oggger - Searched for retailer
+11:37:42.329 [main] DEBUG tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:38)oggger - Clicked on 'Edit Retailer'
+11:37:42.329 [main] INFO  tests.RemoveRewardPointsTest.searchRetailer(RemoveRewardPointsTest.java:40)oggger - Finished test: searchRetailer
+11:37:42.332 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:45)oggger - Starting test: removeRewardPoints
+11:37:42.367 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:48)oggger - Selected 'Remove Points'
+11:37:42.407 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:51)oggger - Opened reason dropdown
+11:37:42.455 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:54)oggger - Selected reason for point removal
+11:37:42.490 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:57)oggger - Entered points value
+11:37:42.532 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:60)oggger - Clicked on 'Confirm'
+11:37:49.040 [main] DEBUG tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:63)oggger - Confirmed removal with 'Yes'
+11:37:49.040 [main] INFO  tests.RemoveRewardPointsTest.removeRewardPoints(RemoveRewardPointsTest.java:65)oggger - Finished test: removeRewardPoints
+11:37:49.042 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:70)oggger - Starting test: validateConfirmationMessage
+11:37:49.456 [main] DEBUG tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:73)oggger - Validated confirmation popup message
+11:37:49.457 [main] INFO  tests.RemoveRewardPointsTest.validateConfirmationMessage(RemoveRewardPointsTest.java:75)oggger - Finished test: validateConfirmationMessage
